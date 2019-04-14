@@ -1,4 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
+import { Example } from "./03-hooks-state/Example";
 
-render(<div>Hello, World</div>, document.getElementById('main'));
+render(<Example />, document.getElementById('main'));
