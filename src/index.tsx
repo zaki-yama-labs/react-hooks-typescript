@@ -1,5 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-import { WithoutCleanupCls } from "./04-hooks-effect/WithoutCleanupCls";
+import { WithoutCleanup } from "./04-hooks-effect/WithoutCleanup";
 
-render(<WithoutCleanupCls />, document.getElementById('main'));
+render(<WithoutCleanup />, document.getElementById('main'));

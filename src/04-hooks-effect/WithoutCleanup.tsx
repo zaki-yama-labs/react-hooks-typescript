@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export const Example: React.FC = () => {
+export const WithoutCleanup: React.FC = () => {
   const [count, setCount] = useState(0);
 
   // Similar to componentDidMount and componentDidUpdate:
