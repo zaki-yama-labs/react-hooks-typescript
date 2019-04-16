@@ -1,5 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-import { ExampleWithManyStates } from "./03-hooks-state/ExampleWithManyStates";
+import { Example } from "./04-hooks-effect/Example";
 
-render(<ExampleWithManyStates />, document.getElementById('main'));
+render(<Example />, document.getElementById('main'));
