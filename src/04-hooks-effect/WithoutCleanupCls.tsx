@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from "react";
 
 type State = {
   count: number,
 };
 
-export class Example extends React.Component<any, State> {
+export class WithoutCleanupCls extends React.Component<any, State> {
   constructor(props: any) {
     super(props);
 
@@ -13,13 +13,21 @@ export class Example extends React.Component<any, State> {
     };
   }
 
+  componentDidMount() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+
+  componentDidUpdate() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+
   render() {
     return (
       <div>
         <p>You clicked {this.state.count} times</p>
         <button onClick={() => this.setState({ count: this.state.count + 1})}>
           Click me
-      </button>
+        </button>
       </div>
     );
   }

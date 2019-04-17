@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export function ExampleWithManyStates() {
+export const ExampleWithManyStates: React.FC = () => {
   // Declare multiple state variables;
   const [age, setAge] = useState(42);
   const [fruit, setFruit] = useState('banana');
@@ -18,4 +18,4 @@ export function ExampleWithManyStates() {
       </select>
     </div>
   );
-}
+};

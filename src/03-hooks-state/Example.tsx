@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export function Example() {
+export const Example: React.FC = () => {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
 
@@ -12,4 +12,4 @@ export function Example() {
       </button>
     </div>
   );
-}
+};

@@ -1,5 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-import { ExampleWithManyStates } from "./03-hooks-state/ExampleWithManyStates";
+import { WithoutCleanup } from "./04-hooks-effect/WithoutCleanup";
 
-render(<ExampleWithManyStates />, document.getElementById('main'));
+render(<WithoutCleanup />, document.getElementById('main'));
