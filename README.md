@@ -17,3 +17,10 @@ useEffect(() => {
   document.title = `You clicked ${count} times`;
 }, [count]); // Only re-run the effect if count changes
 ```
+
+### [5. フックのルール](https://ja.reactjs.org/docs/hooks-rules.html)
+
+- フックを呼び出すのはトップレベルのみ。ループや条件分岐、ネストされた関数内での呼び出しは不可
+- React の関数コンポーネント内　or カスタムフック内のみで呼び出す
+
+なぜか？ -> `useState` の呼び出しがどの state に対応するのか、はフックが呼ばれる順番に依存しているから
