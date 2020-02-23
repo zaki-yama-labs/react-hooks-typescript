@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const Example: React.FC = () => {
   // Declare a new state variable, which we'll call "count"
@@ -7,9 +7,7 @@ export const Example: React.FC = () => {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
 };

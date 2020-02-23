@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-
-declare const ChatAPI: any;
+import { ChatAPI } from "./ChatAPI";
 
 type Props = {
-  friend: { id: string },
+  friend: { id: number };
 };
 
-// NOTE: React.FC で string を返すとエラーだった
-export const FrientStatus = (props: Props) => {
+export const FriendStatus: React.FC<Props> = props => {
   const [isOnline, setIsOnline] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -23,7 +21,7 @@ export const FrientStatus = (props: Props) => {
   });
 
   if (isOnline === null) {
-    return 'Loading...';
+    return <>Loading...</>;
   }
-  return isOnline ? 'Online' : 'Offline';
+  return <>{isOnline ? "Online" : "Offline"}</>;
 };

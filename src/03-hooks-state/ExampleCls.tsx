@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 type State = {
-  count: number,
+  count: number;
 };
 
 export class Example extends React.Component<any, State> {
@@ -17,9 +17,9 @@ export class Example extends React.Component<any, State> {
     return (
       <div>
         <p>You clicked {this.state.count} times</p>
-        <button onClick={() => this.setState({ count: this.state.count + 1})}>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
           Click me
-      </button>
+        </button>
       </div>
     );
   }
