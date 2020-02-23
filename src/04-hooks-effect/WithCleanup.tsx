@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ChatAPI } from "./ChatAPI";
 
 type Props = {
-  friend: { id: string },
+  friend: { id: string };
 };
 
-export const FriendStatus: React.FC<Props> = props  => {
+export const FriendStatus: React.FC<Props> = props => {
   const [isOnline, setIsOnline] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -23,5 +23,5 @@ export const FriendStatus: React.FC<Props> = props  => {
   if (isOnline === null) {
     return <>Loading...</>;
   }
-  return <>{isOnline ? 'Online' : 'Offline'}</>;
+  return <>{isOnline ? "Online" : "Offline"}</>;
 };

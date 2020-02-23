@@ -7,16 +7,15 @@ const fakeRequest = (request: string) => {
 };
 
 export class ChatAPI {
-
   static async subscribeToFriendStatus(id: string, cb: Function) {
-    const _ = await fakeRequest('subscribe');
+    const _ = await fakeRequest("subscribe");
     cb({
       isOnline: true
     });
   }
 
   static async unsubscribeFromFriendStatus(id: string, cb: Function) {
-    const _ = await fakeRequest('unsubscribe');
+    const _ = await fakeRequest("unsubscribe");
     cb({
       isOnline: true
     });

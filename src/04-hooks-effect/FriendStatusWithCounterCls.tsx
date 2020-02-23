@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 declare const ChatAPI: any;
 
@@ -7,24 +7,30 @@ type Props = {
 };
 
 type State = {
+  count: number;
   isOnline: boolean | null;
 };
 
-export class WithCleanupCls extends React.Component<any, State> {
-  constructor(props: any) {
+class FriendStatusWithCounterCls extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
-    this.state = { isOnline: null };
+    this.state = { count: 0, isOnline: null };
     this.handleStatusChange = this.handleStatusChange.bind(this);
   }
 
   componentDidMount() {
+    document.title = `You clicked ${this.state.count} times`;
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
       this.handleStatusChange
     );
   }
 
-  componentWillUnmount() {
+  componentDidUpdate() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+
+  componentWillMount() {
     ChatAPI.unsubscribeFromFriendStatus(
       this.props.friend.id,
       this.handleStatusChange
@@ -35,12 +41,5 @@ export class WithCleanupCls extends React.Component<any, State> {
     this.setState({
       isOnline: status.isOnline
     });
-  }
-
-  render() {
-    if (this.state.isOnline === null) {
-      return "Loading...";
-    }
-    return this.state.isOnline ? "Online" : "Offline";
   }
 }
