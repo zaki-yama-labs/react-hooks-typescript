@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ChatAPI, Status } from "../04-hooks-effect/ChatAPI";
 
-export function useFriendStatus(friendID: string) {
+export function useFriendStatus(friendID: number) {
   const [isOnline, setIsOnline] = useState<boolean | null>(null);
 
   useEffect(() => {

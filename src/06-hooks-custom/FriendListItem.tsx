@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useFriendStatus } from "./useFriendStatus";
 
 type Props = {
   friend: {
-    id: string;
+    id: number;
     name: string;
   };
 };

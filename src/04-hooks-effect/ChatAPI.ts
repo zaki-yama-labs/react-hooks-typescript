@@ -12,7 +12,7 @@ export type Status = {
 
 export class ChatAPI {
   static async subscribeToFriendStatus(
-    id: string,
+    id: number,
     cb: (status: Status) => any
   ) {
     const _ = await fakeRequest("subscribe");
@@ -22,7 +22,7 @@ export class ChatAPI {
   }
 
   static async unsubscribeFromFriendStatus(
-    id: string,
+    id: number,
     cb: (status: Status) => any
   ) {
     const _ = await fakeRequest("unsubscribe");

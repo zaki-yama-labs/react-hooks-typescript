@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ChatAPI } from "./ChatAPI";
 
 type Props = {
-  friend: { id: string };
+  friend: { id: number };
 };
 
 export const FriendStatus: React.FC<Props> = props => {
