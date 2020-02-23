@@ -6,15 +6,25 @@ const fakeRequest = (request: string) => {
   });
 };
 
+export type Status = {
+  isOnline: boolean;
+};
+
 export class ChatAPI {
-  static async subscribeToFriendStatus(id: string, cb: Function) {
+  static async subscribeToFriendStatus(
+    id: string,
+    cb: (status: Status) => any
+  ) {
     const _ = await fakeRequest("subscribe");
     cb({
       isOnline: true
     });
   }
 
-  static async unsubscribeFromFriendStatus(id: string, cb: Function) {
+  static async unsubscribeFromFriendStatus(
+    id: string,
+    cb: (status: Status) => any
+  ) {
     const _ = await fakeRequest("unsubscribe");
     cb({
       isOnline: true
